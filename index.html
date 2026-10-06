@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Umesh Linga — Bioinformatics Engineer · Cinematic Portfolio</title>
+<meta name="description" content="Umesh Linga — Bioinformatics Engineer in Indianapolis. Production NGS pipelines, variant interpretation, genomic data platforms, agentic AI."/>
+<style>
+:root{--ink:#111;--mut:#6e6e73;--line:#e7ddd2;--org:#ff8a2a;--org2:#ffb25e;--grn:#0a7d5c;--vio:#5e5ce6;--f:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--m:Consolas,"Liberation Mono",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);color:var(--ink);background:#fff7ed;overflow-x:clip;-webkit-font-smoothing:antialiased}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;background-image:radial-gradient(#000 1px,transparent 1.3px);background-size:5px 5px}
+
+/* ============ SCENE 1 — cinematic opening ============ */
+.s1{min-height:100svh;background:#050505;color:#fff;position:relative;overflow:hidden;padding:56px 5vw 26px}
+.s1bg{position:absolute;inset:-6% 0;background:radial-gradient(900px 520px at 78% 18%,rgba(255,138,42,.32),transparent 62%),radial-gradient(700px 500px at 12% 82%,rgba(94,92,230,.22),transparent 60%),linear-gradient(180deg,#050505,#120a05 70%,#050505);will-change:transform}
+.vig{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 42%,transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.s1grid{position:relative;z-index:3;display:grid;grid-template-columns:1.08fr .72fr;gap:38px;align-items:center;width:min(1180px,100%);margin:4svh auto 0}
+@media(max-width:880px){.s1grid{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--m);letter-spacing:.28em;font-size:12px;text-transform:uppercase;color:var(--org2);font-weight:700}
+.word{font-weight:900;letter-spacing:-.02em;line-height:.92;font-size:clamp(3rem,8.5vw,6.4rem);color:#fff;text-shadow:0 12px 44px rgba(0,0,0,.5);margin-top:14px;animation:rise 1.2s .3s cubic-bezier(.16,.8,.24,1) both}
+.word span{color:var(--org)}
+@keyframes rise{from{opacity:0;transform:translateY(42px);filter:blur(9px)}to{opacity:1;transform:none;filter:none}}
+.role{font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:800;color:#ffe9d2;margin-top:14px;animation:rise 1.1s .8s both}
+.sub{color:#d6c9bb;line-height:1.6;margin-top:13px;max-width:560px;animation:rise 1.1s 1s both}
+.sub b{color:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;animation:rise 1.1s 1.2s both}
+.chip{font-family:var(--m);font-size:12px;padding:8px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06);backdrop-filter:blur(6px)}
+.btn{padding:12px 20px;border-radius:999px;font-weight:750;font-size:14.5px;border:2px solid #111;background:#fff;color:#111;cursor:pointer;font-family:var(--f);text-decoration:none;display:inline-block;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.dark{background:var(--org);border-color:var(--org);color:#111}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn:disabled{opacity:.55;cursor:default;transform:none}
+.ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;animation:rise 1.1s 1.35s both}
+
+/* video panel: walks in from left, step-bob, then settles */
+.vpanel{position:relative;justify-self:center;width:min(340px,84vw);animation:walkIn 1.9s .45s cubic-bezier(.2,.75,.25,1) both}
+@keyframes walkIn{0%{opacity:0;transform:translateX(-64vw) translateY(0) scale(.94)}18%{opacity:1}30%{transform:translateX(-46vw) translateY(-9px) scale(.955)}45%{transform:translateX(-32vw) translateY(0) scale(.965)}60%{transform:translateX(-19vw) translateY(-8px) scale(.975)}75%{transform:translateX(-8vw) translateY(0) scale(.99)}88%{transform:translateX(-2vw) translateY(-4px) scale(1)}100%{opacity:1;transform:translateX(0) translateY(0) scale(1)}}
+.vframe{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.28);box-shadow:0 34px 80px rgba(0,0,0,.55);background:#000;line-height:0}
+.vframe video{width:100%;height:auto;display:block;aspect-ratio:9/16;object-fit:cover;background:#000}
+.vframe img.heroFace{width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;background:#ff8a2a;animation:heroWalk 7s ease-in-out infinite}
+@keyframes heroWalk{0%,100%{transform:scale(1.02) translateX(0)}50%{transform:scale(1.09) translateX(-8px)}}
+.vcap{display:flex;align-items:center;gap:10px;margin-top:13px;background:rgba(255,255,255,.97);color:#111;border-radius:15px;padding:11px 14px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.vcap .dot{width:10px;height:10px;border-radius:50%;background:#e02424;flex:none;box-shadow:0 0 0 0 rgba(224,36,36,.5);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(224,36,36,0)}100%{box-shadow:0 0 0 0 rgba(224,36,36,0)}}
+.vcap p{font-size:13.5px;line-height:1.45}
+.steps{margin-top:12px}
+.steps .track{height:6px;border-radius:99px;background:rgba(255,255,255,.18);overflow:hidden}
+.steps .fill{height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,var(--org),var(--org2))}
+.steps .lab{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.72);margin-top:7px;display:flex;justify-content:space-between}
+.hint{position:relative;z-index:3;text-align:center;font-family:var(--m);font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-top:30px}
+
+/* ============ generic scenes ============ */
+section{padding:90px 6vw;display:flex;flex-direction:column;align-items:center;text-align:center}
+.wrap{width:min(1080px,100%)}
+.eyebrow.d{color:var(--grn)}
+h2{font-size:clamp(2.1rem,6vw,4rem);font-weight:900;letter-spacing:-.03em;line-height:1.02;margin-top:10px}
+.grad{background:linear-gradient(94deg,var(--grn),#12a594 45%,var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);margin-top:13px;line-height:1.55}
+
+/* SCENE 2 — project universe */
+.uni{position:relative;height:540px;margin-top:42px;perspective:1100px}
+.ucard{position:absolute;width:264px;text-align:left;background:#111;color:#fff;border-radius:20px;padding:20px;box-shadow:0 24px 54px rgba(0,0,0,.24);border:1px solid #2a2a2e;cursor:pointer;transition:outline-color .2s}
+.ucard .k{font-family:var(--m);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase}
+.ucard h3{font-size:1.22rem;margin:8px 0 6px}
+.ucard p{color:#c7c7cc;font-size:13.5px;line-height:1.5}
+.ucard .go{color:var(--org2);font-weight:700;font-size:13px;display:inline-block;margin-top:10px}
+.ucard:hover{outline:2px solid var(--org)}
+@media(max-width:800px){.uni{height:auto;display:grid;gap:13px}.ucard{position:relative;width:auto;left:auto!important;top:auto!important}}
+.show{text-align:left;display:grid;gap:14px;margin-top:36px}
+.proj{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px}
+.proj .k{font-family:var(--m);font-size:11px;letter-spacing:.23em;text-transform:uppercase;color:var(--grn)}
+.proj h3{margin:7px 0 5px;font-size:1.45rem}
+.proj p{color:var(--mut);line-height:1.55}
+.proj a{font-weight:700;text-decoration:none}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.t2{font-family:var(--m);font-size:11px;padding:4px 9px;border:1px solid var(--line);border-radius:999px}
+
+/* SCENE 3 — timeline */
+.rail{margin:42px auto 8px;max-width:900px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:800px){.rail{grid-template-columns:1fr}}
+.yr{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px 14px;cursor:pointer;text-align:left;font-family:var(--f);transition:all .2s;color:var(--ink)}
+.yr b{font-size:1.02rem}
+.yr span{display:block;color:var(--mut);font-size:12.5px;margin-top:5px;line-height:1.45}
+.yr.on{border-color:var(--org);box-shadow:0 16px 38px rgba(255,138,42,.25);transform:translateY(-4px)}
+#yrDetail{max-width:900px;margin:18px auto 0;background:#111;color:#fff;border-radius:18px;padding:20px 22px;text-align:left;line-height:1.55}
+#yrDetail b{color:var(--org2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:38px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 12px}
+.stat .n{font-size:2.3rem;font-weight:900}
+.stat .l{color:var(--mut);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+
+/* finale */
+.fin{background:#050505;color:#fff}
+.fin .big{font-size:clamp(2.5rem,8.5vw,6rem);font-weight:900;letter-spacing:-.02em;line-height:.96;margin-top:8px}
+.fin .big span{color:var(--org)}
+.fin img.av{width:108px;height:108px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.25);margin-bottom:18px}
+.note{background:#111;color:#fff;border-radius:16px;padding:17px 20px;margin-top:30px;text-align:left;line-height:1.55}
+.note b{color:#ffd23f}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+footer{padding:34px 6vw;text-align:center;color:#9a8f83;font-size:14px;background:#050505;line-height:1.7}
+footer a{color:var(--org2)}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- SCENE 1 -->
+<header class="s1" id="hero">
+  <div class="s1bg" id="s1bg"></div>
+  <div class="vig"></div>
+  <div class="s1grid">
+    <div>
+      <div class="eyebrow">Bioinformatics Engineer · Indianapolis</div>
+      <div class="word">UMESH<br/><span>LINGA</span></div>
+      <div class="role">I build the pipelines genomes run on.</div>
+      <p class="sub">Production <b>NGS pipelines</b>, variant interpretation, genomic data platforms, and <b>agentic AI</b> that reads the evidence behind every call — systems research and clinical teams depend on.</p>
+      <div class="chips">
+        <span class="chip">NGS Pipelines</span><span class="chip">Variant Interpretation</span><span class="chip">Genomic Data Platforms</span><span class="chip">Agentic AI</span><span class="chip">Statistical Genetics</span>
+      </div>
+      <div class="ctaRow">
+        <button class="btn dark" id="playBtn">▶ Play my introduction</button>
+        <a class="btn ghost" href="#projects">See projects ↓</a>
+        <a class="btn ghost" href="https://github.com/umeshlinga">GitHub</a>
+      </div>
+    </div>
+
+    <div class="vpanel">
+      <div class="vframe">
+        <img class="heroFace" src="assets/hero-face-pro.webp" alt="Umesh Linga — professional portrait at a genomic data desk"/>
+      </div>
+      <audio id="voice" preload="metadata" src="assets/umesh-ai-intro.mp3"></audio>
+      <div class="vcap"><span class="dot"></span><p><b>My face.</b><br/>Press play — a guided voice tour of everything inside this portfolio.</p></div>
+      <div class="steps">
+        <div class="track"><div class="fill" id="stepFill"></div></div>
+        <div class="lab"><span id="stepLab">GUIDE · 0%</span><span>19 SEC</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hint">SCROLL · THE UNIVERSE IS BELOW</div>
+</header>
+
+<!-- SCENE 2 -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow d rv">Scene 2 · The universe</div>
+    <h2 class="rv">My work, <span class="grad">in orbit.</span></h2>
+    <p class="lead rv">Move your pointer — each project sits at its own depth. Click a card to open it on GitHub.</p>
+    <div class="uni rv" id="uni"></div>
+    <div class="note rv"><b>How the motion works:</b> the panel above walks in with a step-bob, the projects float at measured depths, and the timeline below is yours to drive. A walking clip of Umesh, when he shoots one, drops into the same hero frame — see README.md.</div>
+  </div>
+</section>
+
+<!-- SCENE 3 -->
+<section style="background:#fff">
+  <div class="wrap">
+    <div class="eyebrow d rv">Scene 3 · The time machine</div>
+    <h2 class="rv">2021 → 2026. <span class="grad">You drive it.</span></h2>
+    <div class="rail rv" id="rail"></div>
+    <div id="yrDetail" class="rv"></div>
+    <div class="stats rv">
+      <div class="stat"><div class="n grad">5+</div><div class="l">Years in bioinformatics</div></div>
+      <div class="stat"><div class="n grad">3</div><div class="l">WGS · WES · Panels</div></div>
+      <div class="stat"><div class="n grad">9</div><div class="l">Genomic databases</div></div>
+      <div class="stat"><div class="n grad">11</div><div class="l">Public repos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (accessible list) -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow d rv">Featured work</div>
+    <h2 class="rv">Projects that <span class="grad">ship answers.</span></h2>
+    <div class="show" id="plist2"></div>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section class="fin">
+  <div class="wrap">
+    <img class="av rv" src="https://avatars.githubusercontent.com/u/170876959?v=4" alt="Umesh Linga"/>
+    <div class="eyebrow rv">What's next</div>
+    <div class="big rv">LET'S SEQUENCE<br/><span>SOMETHING GREAT.</span></div>
+    <p class="lead rv" style="color:#c7c7cc">Open to bioinformatics and clinical genomics roles across the US.</p>
+    <div style="margin-top:22px;display:flex;gap:9px;flex-wrap:wrap;justify-content:center" class="rv">
+      <a class="btn dark" href="https://github.com/umeshlinga">See the work</a>
+      <a class="btn" href="https://www.linkedin.com/in/umesh-linga-aa8321293/">LinkedIn</a>
+      <a class="btn" href="mailto:umesh.linga25@gmail.com">umesh.linga25@gmail.com</a>
+      <a class="btn" href="tel:+13174275601">+1 (317) 427-5601</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Umesh Linga · Indianapolis, Indiana · <a href="tel:+13174275601">+1 (317) 427-5601</a> · <a href="mailto:umesh.linga25@gmail.com">umesh.linga25@gmail.com</a><br/>
+  <a href="https://github.com/umeshlinga">github.com/umeshlinga</a> · <a href="https://www.linkedin.com/in/umesh-linga-aa8321293/">linkedin.com/in/umesh-linga-aa8321293</a><br/>
+  Cinematic portfolio v16 — his face, AI guided introduction, local preview build, not yet published.
+</footer>
+
+<script>
+var PROJECTS=[
+ {k:"Agentic AI",c:"#c4b5fd",n:"Genetic Evidence Discovery",p:"Multi-agent framework with retrieval over ClinVar, genomic APIs, and scientific literature. Every output structured and traceable back to its evidence — built for gene and target prioritization a scientist can defend in review.",tags:["LLM Agents","RAG","ClinVar API","Evidence Tracing"],u:"https://github.com/umeshlinga",x:3,y:4,d:24},
+ {k:"NGS Pipeline",c:"#2ee6a8",n:"FASTQ → Variant Annotation",p:"Modular pipeline in Python and Bash on AWS — QC, alignment, variant calling, and annotation as one governed workflow. The same run, the same result, every time.",tags:["Python","Bash","AWS","Variant Calling"],u:"https://github.com/umeshlinga/ngs-pipeline",x:36,y:0,d:44},
+ {k:"Data Platform",c:"#7dd3fc",n:"Genomic Data Management",p:"SQL-driven genomic data system with a REST API for variant annotation and automated HTML reporting — one governed source instead of re-annotating every run.",tags:["PostgreSQL","REST API","HTML Reports"],u:"https://github.com/umeshlinga/genomic-data-mgmt",x:69,y:6,d:22},
+ {k:"Full-Stack",c:"#2fd8c8",n:"MetaBiome Platform",p:"NGS pipeline, FastAPI backend, PostgreSQL, React front end, deployed on AWS ECS/Batch — no manual steps between data landing and the results going out.",tags:["FastAPI","React","PostgreSQL","AWS ECS"],u:"https://github.com/umeshlinga/metabiome-platform",x:10,y:52,d:40},
+ {k:"Transcriptomics",c:"#fbbf24",n:"RNA-seq Framework",p:"STAR alignment and featureCounts quantification in OOP Python, deployed on AWS — structured so any cohort runs the same way twice.",tags:["STAR","featureCounts","OOP Python","AWS"],u:"https://github.com/umeshlinga/rnaseq-framework",x:41,y:56,d:18},
+ {k:"Single-Cell",c:"#f0abfc",n:"NAFLD → HCC · 68K-Cell Atlas",p:"Multi-cohort scRNA-seq integration revealing NAFLD-to-HCC progression biomarkers, plus stage-specific biomarkers across 68,060 colorectal cancer cells.",tags:["scRNA-seq","Integration","Biomarkers","68,060 cells"],u:"https://github.com/umeshlinga/nafld-hcc-scrna-integration",x:71,y:53,d:36}
+];
+var uni=document.getElementById('uni');
+function tagsHtml(tags){ return '<div class="tags">'+tags.map(function(t){return '<span class="t2">'+t+'</span>';}).join('')+'</div>'; }
+PROJECTS.forEach(function(p){
+  var el=document.createElement('div');
+  el.className='ucard'; el.dataset.d=p.d;
+  el.style.left=p.x+'%'; el.style.top=p.y+'%';
+  el.setAttribute('role','link'); el.setAttribute('tabindex','0');
+  el.innerHTML='<div class="k" style="color:'+p.c+'">'+p.k+'</div><h3>'+p.n+'</h3><p>'+p.p+'</p><span class="go">Open on GitHub →</span>';
+  function open(){ window.open(p.u,'_blank'); }
+  el.addEventListener('click',open);
+  el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); }});
+  uni.appendChild(el);
+});
+['plist2'].forEach(function(id){
+  var host=document.getElementById(id); if(!host) return;
+  PROJECTS.forEach(function(p){
+    var d=document.createElement('div'); d.className='proj rv';
+    d.innerHTML='<div class="k">'+p.k+'</div><h3>'+p.n+'</h3><p>'+p.p+'</p>'+tagsHtml(p.tags)+'<p style="margin-top:12px"><a href="'+p.u+'">Explore on GitHub →</a></p>';
+    host.appendChild(d);
+  });
+});
+if(window.matchMedia('(min-width:801px)').matches){
+  document.addEventListener('pointermove',function(e){
+    var cx=(e.clientX/window.innerWidth-.5), cy=(e.clientY/window.innerHeight-.5);
+    document.querySelectorAll('.ucard').forEach(function(el){
+      var d=+el.dataset.d;
+      el.style.transform='translate3d('+(-cx*d).toFixed(1)+'px,'+(-cy*d).toFixed(1)+'px,0)';
+    });
+  });
+}
+/* hero parallax on scroll */
+var bg=document.getElementById('s1bg');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY||0;
+  if(y<window.innerHeight*1.2){ bg.style.transform='translateY('+(y*.18)+'px) scale(1.04)'; }
+},{passive:true});
+/* introduction: his REAL voice (extracted from his own recording) — sound plays on the click */
+var vid=document.getElementById('voice'), playBtn=document.getElementById('playBtn');
+var fill=document.getElementById('stepFill'), lab=document.getElementById('stepLab');
+playBtn.addEventListener('click',function(){
+  if(!vid.paused){ vid.pause(); playBtn.textContent='▶ Play my introduction'; return; }
+  vid.volume=1;
+  var pr=vid.play();
+  if(pr&&pr.catch){ pr.catch(function(){ lab.textContent='INTRO · TAP AGAIN — BROWSER BLOCKED SOUND'; }); }
+  playBtn.textContent='❚❚ Pause my introduction';
+});
+vid.addEventListener('timeupdate',function(){
+  if(!vid.duration) return;
+  var pc=Math.round((vid.currentTime/vid.duration)*100);
+  fill.style.width=pc+'%'; lab.textContent='GUIDE · '+pc+'%';
+});
+vid.addEventListener('ended',function(){ fill.style.width='100%'; lab.textContent='INTRO · DONE — PLAY AGAIN?'; playBtn.textContent='▶ Play my introduction'; });
+vid.addEventListener('pause',function(){ if(vid.currentTime<vid.duration) playBtn.textContent='▶ Play my introduction'; });
+/* timeline */
+var YEARS=[
+ {y:"2021–23",t:"Bioinformatics Analyst — Cipla",d:"Regulated clinical laboratory, Mumbai — patient samples under full chain-of-custody with audit trails, ACMG variant classification, and clinical reporting pipelines. Where the discipline was earned."},
+ {y:"2023–24",t:"Bio Health Informatics Database Researcher — IU Indianapolis",d:"Integrated TCGA, Ensembl, UCSC and 1000 Genomes into annotation and variant-interpretation workflows; database schema and health-informatics data work."},
+ {y:"2024–25",t:"Bioinformatics Research Analyst — IU Indianapolis",d:"Reproducible NGS pipelines, whole-genome sequencing analysis, statistical genetics (GWAS, fine mapping, colocalization); mentored junior trainees."},
+ {y:"2025–26",t:"Data Analyst — Translation Commons",d:"Python/SQL data-quality workflows over claims and enrollment data, automated validation checks, and stakeholder dashboards (Tableau / Power BI / Looker)."},
+ {y:"2026",t:"Bioinformatics Engineer — Karyon Bio",d:"Owned the clinical variant-analysis pipeline — WES & targeted panels, Nextflow/Docker on AWS + HPC, QC gates, CI/CD, investigator training."}
+];
+var rail=document.getElementById('rail'), det=document.getElementById('yrDetail');
+function setYear(i){
+  document.querySelectorAll('.yr').forEach(function(x,j){ x.classList.toggle('on', j===i); });
+  det.innerHTML='<b>'+YEARS[i].y+' · '+YEARS[i].t+'</b><br/>'+YEARS[i].d;
+}
+YEARS.forEach(function(o,i){
+  var b=document.createElement('button');
+  b.className='yr'; b.type='button';
+  b.innerHTML='<b>'+o.y+'</b><span>'+o.t+'</span>';
+  b.addEventListener('click',function(){ setYear(i); });
+  rail.appendChild(b);
+});
+setYear(4);
+/* scroll reveals */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
